@@ -10,8 +10,7 @@ import {
   Renderer2,
   SkipSelf,
 } from '@angular/core';
-import {Observable, of} from 'rxjs';
-import {Subject} from 'rxjs';
+import {Observable, of, Subject} from 'rxjs';
 import {Platform} from '../platform/platform';
 
 
@@ -47,7 +46,7 @@ export class FocusOriginMonitor {
   private _lastTouchTarget: EventTarget;
 
   /** The timeout id of the touch timeout, used to cancel timeout later. */
-  private _touchTimeout: number;
+  private _touchTimeout: any;
 
   /** Weak map of elements being monitored to their info. */
   private _elementInfo = new WeakMap<Element, MonitoredElementInfo>();

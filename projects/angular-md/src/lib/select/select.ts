@@ -22,15 +22,13 @@ import { Md2Optgroup } from './optgroup';
 import { ENTER, SPACE, UP_ARROW, DOWN_ARROW, HOME, END } from '../core/keyboard/keycodes';
 import { FocusKeyManager } from '../core/a11y/focus-key-manager';
 import { Dir } from '../core/rtl/dir';
-import { Observable, merge } from 'rxjs';
-import { Subscription } from 'rxjs';
+import { Observable, merge, Subscription } from 'rxjs';
 import { transformPlaceholder, transformPanel, fadeInContent } from './select-animations';
 import { ControlValueAccessor, NgControl } from '@angular/forms';
 import { coerceBooleanProperty } from '../core/coercion/boolean-property';
 import { ConnectedOverlayDirective } from '../core/overlay/overlay-directives';
 import { ViewportRuler } from '../core/overlay/position/viewport-ruler';
 import { SelectionModel } from '../core/selection/selection';
-import { ScrollDispatcher } from '../core/overlay/scroll/scroll-dispatcher';
 import { getMdSelectDynamicMultipleError, getMdSelectNonArrayValueError } from './select-errors';
 import { startWith, filter } from 'rxjs/operators';
 

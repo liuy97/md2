@@ -58,4 +58,4 @@ const MD2_MODULES = [
   imports: MD2_MODULES,
   exports: MD2_MODULES,
 })
-export class MdModule { }
+export class Md2Module { }
