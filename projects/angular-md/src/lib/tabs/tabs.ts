@@ -39,7 +39,7 @@ export class Md2Transclude {
 }
 
 @Component({
-  moduleId: module.id,
+  
   selector: 'md2-tab',
   template: `<ng-content></ng-content>`,
   host: {
@@ -69,10 +69,10 @@ export class Md2TabLabel {
 }
 
 @Component({
-  moduleId: module.id,
+  
   selector: 'md2-tabs',
   templateUrl: 'tabs.html',
-  styleUrls: ['tabs.css'],
+  styleUrls: ['tabs.scss'],
   host: {
     '[class]': 'class',
     '(window:resize)': 'onWindowResize()'

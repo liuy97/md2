@@ -49,10 +49,10 @@ export const MD2_TAGS_CONTROL_VALUE_ACCESSOR: any = {
 };
 
 @Component({
-  moduleId: module.id,
+  
   selector: 'md2-tags',
   templateUrl: 'tags.html',
-  styleUrls: ['tags.css'],
+  styleUrls: ['tags.scss'],
   host: {
     'role': 'tags',
     '[id]': 'id',

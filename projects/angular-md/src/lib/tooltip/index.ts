@@ -1,6 +1,5 @@
 import {NgModule} from '@angular/core';
-import {OverlayModule, MdCommonModule} from '../core';
-import {PlatformModule} from '../core/platform/index';
+import {OverlayModule, MdCommonModule, PlatformModule} from '../core/index';
 import {Md2Tooltip, Md2TooltipComponent} from './tooltip';
 
 

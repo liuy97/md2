@@ -26,12 +26,11 @@ import {
   ComponentPortal,
   OverlayConnectionPosition,
   OriginConnectionPosition,
-} from '../core';
-import { Observable } from 'rxjs/Observable';
-import { Subject } from 'rxjs/Subject';
+} from '../core/index';
+import { Observable, Subject } from 'rxjs';
+import { first } from 'rxjs/operators';
 import { Dir } from '../core/rtl/dir';
 import { Platform } from '../core/platform/index';
-import 'rxjs/add/operator/first';
 import { ScrollDispatcher } from '../core/overlay/scroll/scroll-dispatcher';
 import { coerceBooleanProperty } from '../core/coercion/boolean-property';
 
@@ -193,7 +192,7 @@ export class Md2Tooltip implements OnDestroy {
     // close the tooltip.
     let strategy = this._overlay.position().connectedTo(this._elementRef, origin, position);
     strategy.withScrollableContainers(this._scrollDispatcher.getScrollContainers(this._elementRef));
-    strategy.onPositionChange.subscribe(change => {
+    strategy.onPositionChange.subscribe((change: any) => {
       if (change.scrollableViewProperties.isOverlayClipped &&
         this._tooltipInstance && this._tooltipInstance.isVisible()) {
         this.hide(0);
@@ -273,7 +272,7 @@ export class Md2Tooltip implements OnDestroy {
     this._tooltipInstance.message = message;
     this._tooltipInstance._markForCheck();
 
-    this._ngZone.onMicrotaskEmpty.first().subscribe(() => {
+    this._ngZone.onMicrotaskEmpty.pipe(first()).subscribe(() => {
       if (this._tooltipInstance) {
         this._overlayRef.updatePosition();
       }
@@ -288,10 +287,10 @@ export type TooltipVisibility = 'initial' | 'visible' | 'hidden';
  * @docs-private
  */
 @Component({
-  moduleId: module.id,
+  
   selector: 'md2-tooltip',
   templateUrl: 'tooltip.html',
-  styleUrls: ['tooltip.css'],
+  styleUrls: ['tooltip.scss'],
   animations: [
     trigger('state', [
       state('void', style({ transform: 'scale(0)' })),

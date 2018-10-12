@@ -33,10 +33,10 @@ import { MATERIAL_COMPATIBILITY_MODE } from '../core';
  * @docs-private
  */
 @Component({
-  moduleId: module.id,
+  
   selector: 'md2-calendar',
   templateUrl: 'calendar.html',
-  styleUrls: ['calendar.css'],
+  styleUrls: ['calendar.scss'],
   host: {
     '[class.md2-calendar]': 'true',
     'tabindex': '0',

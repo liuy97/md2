@@ -263,13 +263,13 @@ export class Md2DataTableSortBy implements OnInit {
 @Component({
   selector: 'md2-pagination',
   templateUrl: 'pagination.html',
-  styleUrls: ['data-table.css'],
+  styleUrls: ['data-table.scss'],
   exportAs: 'md2Pagination',
   encapsulation: ViewEncapsulation.None
 })
 export class Md2Pagination {
 
-  private _activePage: number = 1;
+  _activePage: number = 1;
 
   @Input() rowsPerPageSet: any = [];
   @Input() md2Table: Md2DataTable;

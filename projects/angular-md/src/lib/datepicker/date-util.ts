@@ -301,8 +301,6 @@ export class DateUtil {
 
   /**
    * Gets the first day of the month for the given date's month.
-   * @param {Date} date
-   * @returns {Date}
    */
   getFirstDateOfWeek(date: Date, firstDayOfWeek: number) {
     let day: number = date.getDate() - ((7 + date.getDay() - firstDayOfWeek) % 7);
@@ -311,8 +309,6 @@ export class DateUtil {
 
   /**
    * Gets the first day of the month for the given date's month.
-   * @param {Date} date
-   * @returns {Date}
    */
   getFirstDateOfMonth(date: Date) {
     return new Date(date.getFullYear(), date.getMonth(), 1);
@@ -320,8 +316,6 @@ export class DateUtil {
 
   /**
    * Gets the number of days in the month for the given date's month.
-   * @param date
-   * @returns {number}
    */
   getNumberOfDaysInMonth(date: Date) {
     return new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
@@ -329,8 +323,6 @@ export class DateUtil {
 
   /**
    * Get an arbitrary date in the month after the given date's month.
-   * @param date
-   * @returns {Date}
    */
   getDateInNextMonth(date: Date) {
     return new Date(date.getFullYear(), date.getMonth() + 1, 1,
@@ -339,8 +331,6 @@ export class DateUtil {
 
   /**
    * Get an arbitrary date in the month before the given date's month.
-   * @param date
-   * @returns {Date}
    */
   getDateInPreviousMonth(date: Date) {
     return new Date(date.getFullYear(), date.getMonth() - 1, 1,
@@ -349,9 +339,6 @@ export class DateUtil {
 
   /**
    * Gets whether two dates have the same year.
-   * @param {Date} d1
-   * @param {Date} d2
-   * @returns {boolean}
    */
   isSameYear(d1: Date, d2: Date) {
     return d1 && d2 && d1.getFullYear() === d2.getFullYear();
@@ -359,9 +346,6 @@ export class DateUtil {
 
   /**
    * Gets whether two dates have the same month and year.
-   * @param {Date} d1
-   * @param {Date} d2
-   * @returns {boolean}
    */
   isSameMonthAndYear(d1: Date, d2: Date) {
     return d1 && d2 && d1.getFullYear() === d2.getFullYear() && d1.getMonth() === d2.getMonth();
@@ -369,9 +353,6 @@ export class DateUtil {
 
   /**
    * Gets whether two dates are the same day (not not necesarily the same time).
-   * @param {Date} d1
-   * @param {Date} d2
-   * @returns {boolean}
    */
   isSameDay(d1: Date, d2: Date) {
     return d1 && d2 && d1.getDate() == d2.getDate() && this.isSameMonthAndYear(d1, d2);
@@ -379,9 +360,6 @@ export class DateUtil {
 
   /**
    * Gets whether two dates are the same hours.
-   * @param {Date} d1
-   * @param {Date} d2
-   * @returns {boolean}
    */
   isSameHour(d1: Date, d2: Date) {
     return d1 && d2 && d1.getHours() == d2.getHours() && this.isSameDay(d1, d2);
@@ -389,9 +367,6 @@ export class DateUtil {
 
   /**
    * Gets whether two dates are the same minutes.
-   * @param {Date} d1
-   * @param {Date} d2
-   * @returns {boolean}
    */
   isSameMinute(d1: Date, d2: Date) {
     return d1 && d2 && d1.getMinutes() == d2.getMinutes() && this.isSameHour(d1, d2);
@@ -399,9 +374,9 @@ export class DateUtil {
 
   /**
    * Gets whether a date is in the month immediately after some date.
-   * @param {Date} startDate The date from which to compare.
-   * @param {Date} endDate The date to check.
-   * @returns {boolean}
+   * @param startDate The date from which to compare.
+   * @param endDate The date to check.
+   * @returns 
    */
   isInNextMonth(startDate: Date, endDate: Date) {
     let nextMonth = this.getDateInNextMonth(startDate);
@@ -410,9 +385,9 @@ export class DateUtil {
 
   /**
    * Gets whether a date is in the month immediately before some date.
-   * @param {Date} startDate The date from which to compare.
-   * @param {Date} endDate The date to check.
-   * @returns {boolean}
+   * @param startDate The date from which to compare.
+   * @param endDate The date to check.
+   * @returns 
    */
   isInPreviousMonth(startDate: Date, endDate: Date) {
     let previousMonth = this.getDateInPreviousMonth(startDate);
@@ -421,9 +396,9 @@ export class DateUtil {
 
   /**
    * Gets the midpoint between two dates.
-   * @param {Date} d1
-   * @param {Date} d2
-   * @returns {Date}
+   * @param d1
+   * @param d2
+   * @returns 
    */
   getDateMidpoint(d1: Date, d2: Date) {
     return this.createDateAtMidnight((d1.getTime() + d2.getTime()) / 2);
@@ -431,8 +406,8 @@ export class DateUtil {
 
   /**
    * Gets the week of the month that a given date occurs in.
-   * @param {Date} date
-   * @returns {number} Index of the week of the month (zero-based).
+   * @param date
+   * @returns Index of the week of the month (zero-based).
    */
   getWeekOfMonth(date: Date) {
     let firstDayOfMonth = this.getFirstDateOfMonth(date);
@@ -441,9 +416,9 @@ export class DateUtil {
 
   /**
    * Gets a new date incremented by the given number of minutes. Number of minutes can be negative.
-   * @param {Date} date
-   * @param {number} numberOfMinutes
-   * @returns {Date}
+   * @param date
+   * @param numberOfMinutes
+   * @returns 
    */
   incrementMinutes(date: Date, numberOfMinutes: number) {
     return new Date(date.getFullYear(), date.getMonth(), date.getDate(),
@@ -452,9 +427,9 @@ export class DateUtil {
 
   /**
    * Gets a new date incremented by the given number of hours. Number of hours can be negative.
-   * @param {Date} date
-   * @param {number} numberOfHours
-   * @returns {Date}
+   * @param date
+   * @param numberOfHours
+   * @returns 
    */
   incrementHours(date: Date, numberOfHours: number) {
     return new Date(date.getFullYear(), date.getMonth(), date.getDate(),
@@ -463,9 +438,9 @@ export class DateUtil {
 
   /**
    * Gets a new date incremented by the given number of days. Number of days can be negative.
-   * @param {Date} date
-   * @param {number} numberOfDays
-   * @returns {Date}
+   * @param date
+   * @param numberOfDays
+   * @returns 
    */
   incrementDays(date: Date, numberOfDays: number) {
     return new Date(date.getFullYear(), date.getMonth(), date.getDate() + numberOfDays,
@@ -476,9 +451,9 @@ export class DateUtil {
    * Gets a new date incremented by the given number of months. Number of months can be negative.
    * If the date of the given month does not match the target month, the date will be set to the
    * last day of the month.
-   * @param {Date} date
-   * @param {number} numberOfMonths
-   * @returns {Date}
+   * @param date
+   * @param numberOfMonths
+   * @returns 
    */
   incrementMonths(date: Date, numberOfMonths: number) {
     // If the same date in the target month does not actually exist, the Date object will
@@ -501,9 +476,9 @@ export class DateUtil {
    * Get the integer distance between two months. This *only* considers the month and year
    * portion of the Date instances.
    *
-   * @param {Date} start
-   * @param {Date} end
-   * @returns {number} Number of months between `start` and `end`. If `end` is before `start`
+   * @param start
+   * @param end
+   * @returns Number of months between `start` and `end`. If `end` is before `start`
    *     chronologically, this number will be negative.
    */
   getMonthDistance(start: Date, end: Date) {
@@ -512,8 +487,8 @@ export class DateUtil {
 
   /**
    * Gets the last day of the month for the given date.
-   * @param {Date} date
-   * @returns {Date}
+   * @param date
+   * @returns 
    */
   getLastDateOfMonth(date: Date) {
     return new Date(date.getFullYear(), date.getMonth(), this.getNumberOfDaysInMonth(date),
@@ -522,8 +497,8 @@ export class DateUtil {
 
   /**
    * Checks whether a date is valid.
-   * @param {Date} date
-   * @return {boolean} Whether the date is a valid Date.
+   * @param date
+   * @return  Whether the date is a valid Date.
    */
   isValidDate(date: Date) {
     return date != null && date.getTime && !isNaN(date.getTime());
@@ -531,7 +506,7 @@ export class DateUtil {
 
   /**
    * Sets a date's time to midnight.
-   * @param {Date} date
+   * @param date
    */
   setDateTimeToMidnight(date: Date) {
     if (this.isValidDate(date)) {
@@ -545,8 +520,8 @@ export class DateUtil {
    * 1. No argument for Date representing now.
    * 2. Single-argument value representing number of seconds since Unix Epoch
    * or a Date object.
-   * @param {number|Date=} value
-   * @return {Date} New date with time set to midnight.
+   * @param value
+   * @return New date with time set to midnight.
    */
   createDateAtMidnight(value: any) {
     let date: Date;
@@ -562,9 +537,9 @@ export class DateUtil {
   /**
    * Checks if a date is within a min and max range, ignoring the time component.
    * If minDate or maxDate are not dates, they are ignored.
-   * @param {Date} date
-   * @param {Date} minDate
-   * @param {Date} maxDate
+   * @param date
+   * @param minDate
+   * @param maxDate
    */
   isDateWithinRange(date: Date, minDate: Date, maxDate: Date) {
     let dateAtMidnight = this.createDateAtMidnight(date);
@@ -577,9 +552,9 @@ export class DateUtil {
   /**
    * Checks if a date is within a min and max range.
    * If minDate or maxDate are not dates, they are ignored.
-   * @param {Date} date
-   * @param {Date} minDate
-   * @param {Date} maxDate
+   * @param date
+   * @param minDate
+   * @param maxDate
    */
   isFullDateWithinRange(date: Date, minDate: Date, maxDate: Date) {
     minDate = this.isValidDate(minDate) ? minDate : null;
@@ -591,9 +566,9 @@ export class DateUtil {
   /**
    * Gets a new date incremented by the given number of years. Number of years can be negative.
    * See `incrementMonths` for notes on overflow for specific dates.
-   * @param {Date} date
-   * @param {number} numberOfYears
-   * @returns {Date}
+   * @param date
+   * @param numberOfYears
+   * @returns 
    */
   incrementYears(date: Date, numberOfYears: number) {
     return this.incrementMonths(date, numberOfYears * 12);
@@ -603,9 +578,9 @@ export class DateUtil {
    * Get the integer distance between two years. This *only* considers the year portion of the
    * Date instances.
    *
-   * @param {Date} start
-   * @param {Date} end
-   * @returns {number} Number of months between `start` and `end`. If `end` is before `start`
+   * @param start
+   * @param end
+   * @returns Number of months between `start` and `end`. If `end` is before `start`
    *     chronologically, this number will be negative.
    */
   getYearDistance(start: Date, end: Date) {
@@ -614,10 +589,10 @@ export class DateUtil {
 
   /**
    * Clamps a date between a minimum and a maximum date.
-   * @param {Date} date Date to be clamped
-   * @param {Date=} minDate Minimum date
-   * @param {Date=} maxDate Maximum date
-   * @return {Date}
+   * @param date Date to be clamped
+   * @param minDate Minimum date
+   * @param maxDate Maximum date
+   * @return
    */
   clampDate(date: Date, minDate: Date, maxDate: Date) {
     let boundDate = date;
@@ -632,8 +607,8 @@ export class DateUtil {
 
   /**
    * Extracts and parses the timestamp from a DOM node.
-   * @param  {HTMLElement} node Node from which the timestamp will be extracted.
-   * @return {number} Time since epoch.
+   * @param node Node from which the timestamp will be extracted.
+   * @return Time since epoch.
    */
   getTimestampFromNode(node: any) {
     if (node && node.hasAttribute('data-timestamp')) {
@@ -644,9 +619,9 @@ export class DateUtil {
   /**
    * Checks if a month is within a min and max range, ignoring the date and time components.
    * If minDate or maxDate are not dates, they are ignored.
-   * @param {Date} date
-   * @param {Date} minDate
-   * @param {Date} maxDate
+   * @param date
+   * @param minDate
+   * @param maxDate
    */
   isMonthWithinRange(date: Date, minDate: Date, maxDate: Date) {
     let month = date.getMonth();
@@ -676,7 +651,7 @@ export class DateUtil {
    * Checks if two dates are equal.
    * @param first The first date to check.
    * @param second The second date to check.
-   * @returns {boolean} Whether the two dates are equal.
+   * @returns Whether the two dates are equal.
    *     Null dates are considered equal to other null dates.
    */
   sameDate(first: Date | null, second: Date | null): boolean {
@@ -687,7 +662,7 @@ export class DateUtil {
    * Checks if two dates are equal.
    * @param first The first date to check.
    * @param second The second date to check.
-   * @returns {boolean} Whether the two dates are equal.
+   * @returns Whether the two dates are equal.
    *     Null dates are considered equal to other null dates.
    */
   sameDateAndTime(first: Date | null, second: Date | null): boolean {

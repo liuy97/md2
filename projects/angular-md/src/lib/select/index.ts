@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Md2Select } from './select';
 import { Md2SelectHeader } from './select-header';
 import { Md2OptionModule } from './option';
-import { MdCommonModule, OverlayModule } from '../core';
+import { MdCommonModule, OverlayModule } from '../core/index';
 
 
 @NgModule({

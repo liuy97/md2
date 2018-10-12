@@ -3,7 +3,6 @@ import {
 } from '@angular/core';
 
 @Component({
-  moduleId: module.id,
   selector: '[md2-menu-item]',
   host: {
     'role': 'menuitem'

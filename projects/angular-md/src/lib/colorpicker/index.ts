@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { StyleModule, OverlayModule, PortalModule, A11yModule } from '../core';
+import { StyleModule, OverlayModule, PortalModule, A11yModule } from '../core/index';
 import { Md2Colorpicker, ColorpickerSliderDirective, TextDirective } from './colorpicker';
 import { ColorUtil } from './color-util';
 

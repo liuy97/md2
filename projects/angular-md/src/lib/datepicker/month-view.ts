@@ -24,7 +24,7 @@ const DAYS_PER_WEEK = 7;
  * @docs-private
  */
 @Component({
-  moduleId: module.id,
+  
   selector: 'md2-month-view',
   templateUrl: 'month-view.html',
   animations: [slideCalendar],

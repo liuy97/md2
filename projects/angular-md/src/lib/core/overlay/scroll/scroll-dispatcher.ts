@@ -1,12 +1,9 @@
 import {ElementRef, Injectable, NgZone, Optional, SkipSelf} from '@angular/core';
 import {Platform} from '../../platform/index';
 import {Scrollable} from './scrollable';
-import {Subject} from 'rxjs/Subject';
-import {Observable} from 'rxjs/Observable';
-import {Subscription} from 'rxjs/Subscription';
-import 'rxjs/add/observable/fromEvent';
-import 'rxjs/add/observable/merge';
-import 'rxjs/add/operator/auditTime';
+import {Subject} from 'rxjs';
+import {Subscription, merge, fromEvent} from 'rxjs';
+import {auditTime} from 'rxjs/operators';
 
 
 /** Time in ms to throttle the scrolling events by default. */
@@ -71,16 +68,16 @@ export class ScrollDispatcher {
     // In the case of a 0ms delay, use an observable without auditTime
     // since it does add a perceptible delay in processing overhead.
     let observable = auditTimeInMs > 0 ?
-      this._scrolled.asObservable().auditTime(auditTimeInMs) :
+      this._scrolled.asObservable().pipe(auditTime(auditTimeInMs)) :
       this._scrolled.asObservable();
 
     this._scrolledCount++;
 
     if (!this._globalSubscription) {
       this._globalSubscription = this._ngZone.runOutsideAngular(() => {
-        return Observable.merge(
-          Observable.fromEvent(window.document, 'scroll'),
-          Observable.fromEvent(window, 'resize')
+        return merge(
+          fromEvent(window.document, 'scroll'),
+          fromEvent(window, 'resize')
         ).subscribe(() => this._notify());
       });
     }

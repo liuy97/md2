@@ -13,10 +13,9 @@ export { Md2MenuTrigger } from './menu-trigger';
 
 
 @Component({
-  moduleId: module.id,
   selector: '[md2-menu]',
   template: '<ng-content></ng-content>',
-  styleUrls: ['menu.css'],
+  styleUrls: ['menu.scss'],
   encapsulation: ViewEncapsulation.None,
 })
 export class Md2Menu { }

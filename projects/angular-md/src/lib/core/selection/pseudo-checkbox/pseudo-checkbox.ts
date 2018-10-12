@@ -29,10 +29,10 @@ export const _MdPseudoCheckboxBase = mixinColor(MdPseudoCheckboxBase, 'accent');
  * @docs-private
  */
 @Component({
-  moduleId: module.id,
+  
   encapsulation: ViewEncapsulation.None,
   selector: 'md-pseudo-checkbox, mat-pseudo-checkbox',
-  styleUrls: ['pseudo-checkbox.css'],
+  styleUrls: ['pseudo-checkbox.scss'],
   inputs: ['color'],
   template: '',
   host: {

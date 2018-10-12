@@ -28,7 +28,7 @@ import {Scrollable} from './scroll/scrollable';
 import {ScrollStrategy} from './scroll/scroll-strategy';
 import {coerceBooleanProperty} from '../coercion/boolean-property';
 import {ESCAPE} from '../keyboard/keycodes';
-import {Subscription} from 'rxjs/Subscription';
+import {Subscription} from 'rxjs';
 import {ScrollDispatchModule} from './scroll/index';
 
 
@@ -248,7 +248,7 @@ export class ConnectedOverlayDirective implements OnDestroy, OnChanges {
     }
 
     this._positionSubscription =
-        strategy.onPositionChange.subscribe(pos => this.positionChange.emit(pos));
+        strategy.onPositionChange.subscribe((pos: any) => this.positionChange.emit(pos));
   }
 
   /** Attaches the overlay and subscribes to backdrop clicks if backdrop exists */

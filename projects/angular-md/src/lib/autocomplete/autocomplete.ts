@@ -51,10 +51,10 @@ export class Md2AutocompleteChange {
 }
 
 @Component({
-  moduleId: module.id,
+  
   selector: 'md2-autocomplete',
   templateUrl: 'autocomplete.html',
-  styleUrls: ['autocomplete.css'],
+  styleUrls: ['autocomplete.scss'],
   providers: [MD2_AUTOCOMPLETE_CONTROL_VALUE_ACCESSOR],
   host: {
     'role': 'autocomplete',

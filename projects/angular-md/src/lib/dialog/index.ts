@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { OverlayModule, MdCommonModule } from '../core';
+import { OverlayModule, MdCommonModule } from '../core/index';
 import { PlatformModule } from '../core/platform/index';
 import {
   Md2Dialog,

@@ -2,8 +2,8 @@ import {NgZone} from '@angular/core';
 import {PortalHost, Portal} from '../portal/portal';
 import {OverlayState} from './overlay-state';
 import {ScrollStrategy} from './scroll/scroll-strategy';
-import {Observable} from 'rxjs/Observable';
-import {Subject} from 'rxjs/Subject';
+import {Observable} from 'rxjs';
+import {Subject} from 'rxjs';
 
 
 /**

@@ -21,24 +21,22 @@ import {
   NG_VALIDATORS,
   NG_VALUE_ACCESSOR,
   ValidationErrors,
-  Validator,
   ValidatorFn,
   Validators,
 } from '@angular/forms';
-import { coerceBooleanProperty } from '../core';
+import { coerceBooleanProperty } from '../core/coercion/boolean-property';
 import { Overlay } from '../core/overlay/overlay';
 import { OverlayRef } from '../core/overlay/overlay-ref';
 import { ComponentPortal } from '../core/portal/portal';
 import { OverlayState } from '../core/overlay/overlay-state';
 import { Dir } from '../core/rtl/dir';
 import { PositionStrategy } from '../core/overlay/position/position-strategy';
-import { Subscription } from 'rxjs/Subscription';
-import { DateAdapter } from '../core/datetime/index';
+import { Subscription } from 'rxjs';
 import { ESCAPE } from '../core/keyboard/keycodes';
 import { Md2Calendar } from './calendar';
 import { DateLocale } from './date-locale';
 import { DateUtil } from './date-util';
-import 'rxjs/add/operator/first';
+import { first } from 'rxjs/operators';
 
 /** Change event object emitted by Md2Select. */
 export class Md2DateChange {
@@ -57,10 +55,10 @@ let datepickerUid = 0;
  * @docs-private
  */
 @Component({
-  moduleId: module.id,
+  
   selector: 'md2-datepicker-content',
   templateUrl: 'datepicker-content.html',
-  styleUrls: ['datepicker-content.css'],
+  styleUrls: ['datepicker-content.scss'],
   host: {
     'class': 'md2-datepicker-content',
     '[class.md2-datepicker-content-touch]': 'datepicker?.touchUi',
@@ -107,10 +105,10 @@ export const MD2_DATEPICKER_VALIDATORS: any = {
 
 /* Component responsible for managing the datepicker popup/dialog. */
 @Component({
-  moduleId: module.id,
+  
   selector: 'md2-datepicker',
   templateUrl: 'datepicker.html',
-  styleUrls: ['datepicker.css'],
+  styleUrls: ['datepicker.scss'],
   providers: [MD2_DATEPICKER_VALUE_ACCESSOR, MD2_DATEPICKER_VALIDATORS],
   host: {
     'role': 'datepicker',
@@ -554,7 +552,7 @@ export class Md2Datepicker implements OnDestroy, ControlValueAccessor {
       componentRef.instance.datepicker = this;
 
       /* Update the position once the calendar has rendered. */
-      this._ngZone.onStable.first().subscribe(() => this._popupRef.updatePosition());
+      this._ngZone.onStable.pipe(first()).subscribe(() => this._popupRef.updatePosition());
     }
 
     this._popupRef.backdropClick().subscribe(() => this.close());

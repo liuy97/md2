@@ -1,7 +1,7 @@
 import {QueryList} from '@angular/core';
 import {UP_ARROW, DOWN_ARROW, TAB} from '../core';
-import {Observable} from 'rxjs/Observable';
-import {Subject} from 'rxjs/Subject';
+import {Observable} from 'rxjs';
+import {Subject} from 'rxjs';
 
 /**
  * This interface is for items that can be disabled. The type passed into

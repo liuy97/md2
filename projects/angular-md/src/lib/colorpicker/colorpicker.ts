@@ -23,8 +23,8 @@ import { Overlay } from '../core/overlay/overlay';
 import { OverlayRef } from '../core/overlay/overlay-ref';
 import { OverlayState } from '../core/overlay/overlay-state';
 import { PositionStrategy } from '../core/overlay/position/position-strategy';
-import { TemplatePortal } from '../core';
-import { Subscription } from 'rxjs/Subscription';
+import { TemplatePortal } from '../core/portal/portal';
+import { Subscription } from 'rxjs';
 import { ColorUtil, Rgba, Hsla, Hsva } from './color-util';
 
 export class SliderPosition {
@@ -169,10 +169,10 @@ export class Md2ColorChange {
 }
 
 @Component({
-  moduleId: module.id,
+  
   selector: 'md2-colorpicker',
   templateUrl: 'colorpicker.html',
-  styleUrls: ['colorpicker.css'],
+  styleUrls: ['colorpicker.scss'],
   host: {
     'role': 'colorpicker',
     '[id]': 'id',

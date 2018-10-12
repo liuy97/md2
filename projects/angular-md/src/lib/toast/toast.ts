@@ -9,7 +9,7 @@ import {
   OverlayState,
   OverlayRef,
   ComponentPortal,
-} from '../core';
+} from '../core/index';
 
 export class Toast {
   id: number;
@@ -127,7 +127,7 @@ export class Md2Toast {
 @Component({
   selector: 'md2-toast',
   templateUrl: 'toast.html',
-  styleUrls: ['toast.css'],
+  styleUrls: ['toast.scss'],
   encapsulation: ViewEncapsulation.None,
 })
 export class Md2ToastComponent {

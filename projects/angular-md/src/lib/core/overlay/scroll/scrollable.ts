@@ -1,6 +1,6 @@
 import {Directive, ElementRef, OnInit, OnDestroy, NgZone, Renderer2} from '@angular/core';
-import {Observable} from 'rxjs/Observable';
-import {Subject} from 'rxjs/Subject';
+import {Observable} from 'rxjs';
+import {Subject} from 'rxjs';
 import {ScrollDispatcher} from './scroll-dispatcher';
 import 'rxjs/add/observable/fromEvent';
 

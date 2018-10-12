@@ -18,7 +18,7 @@ import { coerceBooleanProperty } from '../core';
 export class Md2AccordionHeader { }
 
 @Component({
-  moduleId: module.id,
+  
   selector: 'md2-accordion-tab',
   template: `
     <div class="md2-accordion-header" (click)="_handleClick($event)">
@@ -32,7 +32,7 @@ export class Md2AccordionHeader { }
       </div>
     </div>
   `,
-  styleUrls: ['accordion.css'],
+  styleUrls: ['accordion.scss'],
   animations: [
     trigger('slide', [
       state('up', style({ height: 0 })),

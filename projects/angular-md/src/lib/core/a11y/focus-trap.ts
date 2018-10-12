@@ -10,9 +10,7 @@ import {
 import {InteractivityChecker} from './interactivity-checker';
 import {Platform} from '../platform/platform';
 import {coerceBooleanProperty} from '../coercion/boolean-property';
-
-import 'rxjs/add/operator/first';
-
+import {first} from 'rxjs/operators';
 
 /**
  * Class that allows for trapping focus within a DOM element.
@@ -222,7 +220,7 @@ export class FocusTrap {
     if (this._ngZone.isStable) {
       fn();
     } else {
-      this._ngZone.onStable.first().subscribe(fn);
+      this._ngZone.onStable.pipe(first()).subscribe(fn);
     }
   }
 }

@@ -61,7 +61,7 @@ export class Md2ChipsChange {
 @Component({
   selector: 'md2-chips',
   templateUrl: 'chips.html',
-  styleUrls: ['chips.css'],
+  styleUrls: ['chips.scss'],
   providers: [MD2_CHIPS_CONTROL_VALUE_ACCESSOR],
 
   host: {
@@ -110,8 +110,8 @@ export class Md2Chips implements ControlValueAccessor, AfterContentInit {
 
   private _value: any = '';
   private splitRegExp: RegExp;
-  private templateHtmlString: any;
-  private item: any;
+  templateHtmlString: any;
+  item: any;
   private isEmptyAutoComplete: boolean = true;
 
   constructor(private elementRef: ElementRef) { }
@@ -317,7 +317,7 @@ export class Md2Chips implements ControlValueAccessor, AfterContentInit {
  * remove selected chip
  * @param chipIndexToRemove index of selected chip
  */
-  private removeSelectedChip(chipIndexToRemove: number): void {
+  removeSelectedChip(chipIndexToRemove: number): void {
     this.chipItemList.splice(chipIndexToRemove, 1);
     this._resetSelected();
     this.updateValue();

@@ -25,10 +25,10 @@ import {
   OverlayState,
   OverlayRef,
   TemplatePortalDirective
-} from '../core/core';
+} from '../core/index';
 import { extendObject } from '../core/util/object-extend';
-import { Subscription } from 'rxjs/Subscription';
-import 'rxjs/add/operator/first';
+import { Subscription } from 'rxjs';
+import { first } from 'rxjs/operators';
 
 export type DialogVisibility = 'initial' | 'visible' | 'hidden';
 export type DialogRole = 'dialog' | 'alertdialog';
@@ -65,10 +65,10 @@ export class Md2DialogContent { }
 export class Md2DialogActions { }
 
 @Component({
-  moduleId: module.id,
+  
   selector: 'md2-dialog',
   templateUrl: 'dialog.html',
-  styleUrls: ['dialog.css'],
+  styleUrls: ['dialog.scss'],
   host: {
     'tabindex': '0',
     '[attr.role]': 'config?.role',
@@ -188,7 +188,7 @@ export class Md2Dialog implements OnDestroy {
 
   private _subscribeToBackdrop(): void {
     if (!this.config.disableClose) {
-      this._backdropSubscription = this._overlayRef.backdropClick().first().subscribe(() =>
+      this._backdropSubscription = this._overlayRef.backdropClick().pipe(first()).subscribe(() =>
         this.close());
     }
   }

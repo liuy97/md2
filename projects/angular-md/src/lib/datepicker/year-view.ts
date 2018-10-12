@@ -21,7 +21,7 @@ import { slideCalendar } from './datepicker-animations';
  * @docs-private
  */
 @Component({
-  moduleId: module.id,
+  
   selector: 'md2-year-view',
   templateUrl: 'year-view.html',
   animations: [slideCalendar],

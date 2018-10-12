@@ -1,4 +1,4 @@
-import { NgModule, ModuleWithProviders } from '@angular/core';
+import { NgModule } from '@angular/core';
 
 import {
   MdRippleModule,
@@ -12,15 +12,15 @@ import {
 
 import { Md2AccordionModule } from './accordion/index';
 import { Md2AutocompleteModule } from './autocomplete/index';
-import { Md2ChipsModule } from './chips/index';
+import { Md2ChipsModule } from './chips/chips';
 import { Md2CollapseModule } from './collapse/index';
 import { Md2ColorpickerModule } from './colorpicker/index';
-import { Md2DataTableModule } from './data-table/index';
+import { Md2DataTableModule } from './data-table/data-table';
 import { Md2DatepickerModule } from './datepicker/index';
 import { Md2DialogModule } from './dialog/index';
-import { Md2MenuModule } from './menu/index';
+import { Md2MenuModule } from './menu/menu';
 import { Md2SelectModule } from './select/index';
-import { Md2TabsModule } from './tabs/index';
+import { Md2TabsModule } from './tabs/tabs';
 import { Md2TagsModule } from './tags/index';
 import { Md2ToastModule } from './toast/index';
 import { Md2TooltipModule } from './tooltip/index';
@@ -58,4 +58,4 @@ const MD2_MODULES = [
   imports: MD2_MODULES,
   exports: MD2_MODULES,
 })
-export class Md2Module { }
+export class MdModule { }

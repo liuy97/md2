@@ -9,10 +9,9 @@ import { Md2AccordionTab } from './accordiontab';
 import { coerceBooleanProperty } from '../core/core';
 
 @Component({
-  moduleId: module.id,
   selector: 'md2-accordion',
   template: `<ng-content></ng-content>`,
-  styleUrls: ['accordion.css'],
+  styleUrls: ['accordion.scss'],
   encapsulation: ViewEncapsulation.None,
   exportAs: 'md2Accordion'
 })

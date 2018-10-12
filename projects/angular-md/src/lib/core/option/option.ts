@@ -30,7 +30,7 @@ export class MdOptionSelectionChange {
  * Single option inside of a `<md-select>` element.
  */
 @Component({
-  moduleId: module.id,
+  
   selector: 'md-option, mat-option',
   host: {
     'role': 'option',

@@ -76,7 +76,7 @@ export class ViewportRuler {
   }
 
   /** Caches the latest client rectangle of the document element. */
-  _cacheViewportGeometry?() {
+  _cacheViewportGeometry() {
     this._documentRect = document.documentElement.getBoundingClientRect();
   }
 

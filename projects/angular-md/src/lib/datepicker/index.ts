@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { StyleModule, OverlayModule, PortalModule, A11yModule } from '../core';
+import { StyleModule, OverlayModule, PortalModule, A11yModule } from '../core/index';
 import { Md2Datepicker, Md2DatepickerContent } from './datepicker';
 import { Md2DatepickerToggle } from './datepicker-toggle';
 import { Md2Calendar } from './calendar';

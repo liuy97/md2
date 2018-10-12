@@ -25,10 +25,10 @@ export class Md2CalendarCell {
  * @docs-private
  */
 @Component({
-  moduleId: module.id,
+  
   selector: '[md2-calendar-body]',
   templateUrl: 'calendar-body.html',
-  styleUrls: ['calendar-body.css'],
+  styleUrls: ['calendar-body.scss'],
   host: {
     'class': 'md2-calendar-body',
   },

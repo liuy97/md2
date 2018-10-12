@@ -22,8 +22,8 @@ import { Md2Optgroup } from './optgroup';
 import { ENTER, SPACE, UP_ARROW, DOWN_ARROW, HOME, END } from '../core/keyboard/keycodes';
 import { FocusKeyManager } from '../core/a11y/focus-key-manager';
 import { Dir } from '../core/rtl/dir';
-import { Observable } from 'rxjs/Observable';
-import { Subscription } from 'rxjs/Subscription';
+import { Observable, merge } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { transformPlaceholder, transformPanel, fadeInContent } from './select-animations';
 import { ControlValueAccessor, NgControl } from '@angular/forms';
 import { coerceBooleanProperty } from '../core/coercion/boolean-property';
@@ -32,10 +32,7 @@ import { ViewportRuler } from '../core/overlay/position/viewport-ruler';
 import { SelectionModel } from '../core/selection/selection';
 import { ScrollDispatcher } from '../core/overlay/scroll/scroll-dispatcher';
 import { getMdSelectDynamicMultipleError, getMdSelectNonArrayValueError } from './select-errors';
-import 'rxjs/add/observable/merge';
-import 'rxjs/add/operator/startWith';
-import 'rxjs/add/operator/filter';
-
+import { startWith, filter } from 'rxjs/operators';
 
 /**
  * The following style constants are necessary to save here in order
@@ -100,10 +97,10 @@ export class Md2SelectChange {
 export type Md2SelectFloatPlaceholderType = 'always' | 'never' | 'auto';
 
 @Component({
-  moduleId: module.id,
+  
   selector: 'md2-select',
   templateUrl: 'select.html',
-  styleUrls: ['select.css'],
+  styleUrls: ['select.scss'],
   encapsulation: ViewEncapsulation.None,
   host: {
     'role': 'listbox',
@@ -294,7 +291,7 @@ export class Md2Select implements AfterContentInit, OnDestroy, OnInit, ControlVa
 
   /** Combined stream of all of the child options' change events. */
   get optionSelectionChanges(): Observable<Md2OptionSelectionChange> {
-    return Observable.merge(...this.options.map(option => option.onSelectionChange));
+    return merge(...this.options.map(option => option.onSelectionChange));
   }
 
   /** Event emitted when the select has been opened. */
@@ -325,7 +322,7 @@ export class Md2Select implements AfterContentInit, OnDestroy, OnInit, ControlVa
   ngAfterContentInit() {
     this._initKeyManager();
 
-    this._changeSubscription = this.options.changes.startWith(null).subscribe(() => {
+    this._changeSubscription = this.options.changes.pipe(startWith(null)).subscribe(() => {
       this._resetOptions();
 
       if (this._control) {
@@ -645,7 +642,7 @@ export class Md2Select implements AfterContentInit, OnDestroy, OnInit, ControlVa
   /** Listens to user-generated selection events on each option. */
   private _listenToOptions(): void {
     this._optionSubscription = this.optionSelectionChanges
-      .filter(event => event.isUserInput)
+      .pipe(filter(event => event.isUserInput))
       .subscribe(event => {
         this._onSelect(event.source);
         this._setValueWidth();

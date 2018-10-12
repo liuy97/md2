@@ -1,4 +1,4 @@
-import {Subscription} from 'rxjs/Subscription';
+import {Subscription} from 'rxjs';
 import {ScrollStrategy, getMdScrollStrategyAlreadyAttachedError} from './scroll-strategy';
 import {OverlayRef} from '../overlay-ref';
 import {ScrollDispatcher} from './scroll-dispatcher';

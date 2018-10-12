@@ -12,7 +12,7 @@ let _uniqueOptgroupIdCounter = 0;
  * Component that is used to group instances of `md-option`.
  */
 @Component({
-  moduleId: module.id,
+  
   selector: 'md-optgroup, mat-optgroup',
   templateUrl: 'optgroup.html',
   encapsulation: ViewEncapsulation.None,
