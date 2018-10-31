@@ -48,6 +48,9 @@ import { MATERIAL_COMPATIBILITY_MODE } from '../core';
 })
 export class Md2Calendar implements AfterContentInit {
 
+  /** Whether the Week-number should be displayed */
+  @Input() displayWeek: boolean;
+
   @Input() type: 'date' | 'time' | 'month' | 'datetime' = 'date';
 
   /** A date representing the period (month or year) to start the calendar in. */
