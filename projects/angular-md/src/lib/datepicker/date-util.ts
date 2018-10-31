@@ -416,8 +416,8 @@ export class DateUtil {
 
   /**
    * Gets the week of the year that a given date occurs in.
-   * @param {Date} date
-   * @returns {number} Index of the week according to ISO-8601.
+   * @param date
+   * @returns Index of the week according to ISO-8601.
    */
   getWeekOfYear(date: Date) {
     // Copy date so don't modify original
