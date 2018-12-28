@@ -68,6 +68,8 @@ import { DateLocale } from 'md2';
 | `firstDayOfWeek` | `number` | The first day of the week. Sunday = 0, Monday = 1, etc. |
 
 ### Date Format
+everything that is written inside `{` and `}` is treated as an optional input. Optionals will be nulled as input.  
+`format="dd.MM.y{ HH:mm}"` will accept `30.12.2018` and will display `30.12.2018 00:00`  
 
 | COMPONENT | SYMBOL | NARROW | SHORT FORM | LONG FORM        | NUMERIC | 2-DIGIT |
 | --------- | ------ | ------ | ---------- | ---------------- | ------- | ------- |
