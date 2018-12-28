@@ -112,6 +112,10 @@ export class DateUtil {
         } else if (/[NnaA]/.test(placeholderChar)) {
           indexMap[reIndex++] = [placeholderChar, param && param.split(',')];
           return '([a-zA-Z\\u0080-\\u1fff]+)';
+        } else if (placeholderChar == '{') {
+          return '(';
+        } else if (placeholderChar == '}') {
+          return ')?';
         } else if (/w/i.test(placeholderChar)) {
           return '[a-zA-Z\\u0080-\\u1fff]+';
         } else if (/\s/.test(placeholderChar)) {
@@ -158,8 +162,9 @@ export class DateUtil {
         }
       }
     }
-    let d = new Date(ctorArgs[0], ctorArgs[1], ctorArgs[2], ctorArgs[3], ctorArgs[4],
-      ctorArgs[5], ctorArgs[6]);
+
+    let d = new Date(ctorArgs[0] || 0, ctorArgs[1] || 0, ctorArgs[2] || 0, ctorArgs[3] || 0, ctorArgs[4] || 0,
+      ctorArgs[5] || 0, ctorArgs[6] || 0);
     return d;
   }
 

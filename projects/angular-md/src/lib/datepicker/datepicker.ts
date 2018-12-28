@@ -403,6 +403,14 @@ export class Md2Datepicker implements OnDestroy, ControlValueAccessor {
 
     let format = this.format;
 
+    /* Special Optional Character */
+    if (format.indexOf('{') > -1) {
+      format = format.replace('{', '');
+    }
+    if (format.indexOf('}') > -1) {
+      format = format.replace('}', '');
+    }
+
     /* Years */
     if (format.indexOf('yy') > -1) {
       format = format.replace('yy', ('00' + this._util.getYear(date)).slice(-2));
