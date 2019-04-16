@@ -101,7 +101,7 @@ export class DateUtil {
 
     let parser = new RegExp(format.replace(/(.)(\1*)(?:\[([^\]]*)\])?/g,
       (wholeMatch, placeholderChar, placeholderDigits, param) => {
-        if (/[dmhkyhs]/i.test(placeholderChar)) {
+        if (/[dmhkys]/i.test(placeholderChar)) {
           indexMap[reIndex++] = placeholderChar;
           let plen = placeholderDigits.length + 1;
           return '(\\d' + (plen < 2 ? '+' : ('{1,' + plen + '}')) + ')';
@@ -113,7 +113,7 @@ export class DateUtil {
           indexMap[reIndex++] = [placeholderChar, param && param.split(',')];
           return '([a-zA-Z\\u0080-\\u1fff]+)';
         } else if (placeholderChar == '{') {
-          return '(';
+          return '(?:';
         } else if (placeholderChar == '}') {
           return ')?';
         } else if (/w/i.test(placeholderChar)) {
