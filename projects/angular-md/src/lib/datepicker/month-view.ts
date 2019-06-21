@@ -143,9 +143,7 @@ export class Md2MonthView implements AfterContentInit {
   private _createWeekCells() {
     let daysInMonth = this._util.getNumDaysInMonth(this.activeDate);
     let dateNames = this._locale.getDateNames();
-    let oldWeek;
-    this._weeks = [];
-
+    this._weeks = [[]];
     for (let i = 0, cell = this._firstWeekOffset; i < daysInMonth; i++ , cell++) {
       let date = this._util.createDate(
         this._util.getYear(this.activeDate),
@@ -157,10 +155,9 @@ export class Md2MonthView implements AfterContentInit {
         this.dateFilter(date);
       let ariaLabel = this._locale.format(date, this._dateFormats.display.dateA11yLabel);
       let newWeek = this._util.getWeekOfYear(date);
-      if (oldWeek !== newWeek) {
+      const offset = cell % 7;
+      if (offset === 0 && i > 0) {
         this._weeks.push([]);
-        oldWeek = newWeek;
-        cell = 0;
       }
       this._weeks[this._weeks.length - 1]
         .push(new Md2CalendarCell(i + 1, dateNames[i], ariaLabel, enabled, newWeek.toString()));
