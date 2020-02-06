@@ -1,7 +1,7 @@
 import {
   Directive,
   ElementRef,
-  Renderer,
+  Renderer2,
 } from '@angular/core';
 
 @Directive({
@@ -16,10 +16,10 @@ export class Md2MenuTrigger {
 
   private _handleClick: any;
 
-  constructor(private _element: ElementRef, private _renderer: Renderer) { }
+  constructor(private _element: ElementRef, private _renderer: Renderer2) { }
 
   ngAfterViewInit() {
-    this._handleClick = this._renderer.listenGlobal('document', 'click', (event: Event) => {
+    this._handleClick = this._renderer.listen('document', 'click', (event: Event) => {
       if (!this._hasChildMenu(event)) {
         this._closeMenu();
       }

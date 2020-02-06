@@ -8,7 +8,7 @@ import {
   Directive,
   OnDestroy,
   Optional,
-  Renderer,
+  Renderer2,
   Self,
   TemplateRef,
   ViewChild,
@@ -297,7 +297,7 @@ export class Md2Colorpicker implements OnDestroy, ControlValueAccessor {
   @ViewChild('portal') _templatePortal: TemplateRef<any>;
 
   constructor(private _element: ElementRef, private _overlay: Overlay,
-    private _viewContainerRef: ViewContainerRef, private _renderer: Renderer,
+    private _viewContainerRef: ViewContainerRef, private _renderer: Renderer2,
     private _util: ColorUtil, @Self() @Optional() public _control: NgControl) {
     this._created = false;
     if (this._control) {
