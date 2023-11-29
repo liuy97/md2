@@ -1,6 +1,6 @@
 {
-  "name": "md2",
-  "version": "6.0.0",
+  "name": "angular-md2-datepicker",
+  "version": "16.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
