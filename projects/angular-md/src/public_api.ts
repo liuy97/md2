@@ -11,6 +11,8 @@ export * from './lib/collapse/index';
 export * from './lib/colorpicker/index';
 export * from './lib/data-table/index';
 export * from './lib/datepicker/index';
+export * from './lib/datepicker/datepicker-toggle';
+export * from './lib/datepicker/calendar';
 export * from './lib/dialog/index';
 export * from './lib/menu/index';
 export * from './lib/select/index';

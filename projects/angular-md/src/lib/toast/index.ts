@@ -15,7 +15,6 @@ export * from './toast';
   ],
   exports: [Md2ToastComponent, MdCommonModule],
   declarations: [Md2ToastComponent],
-  entryComponents: [Md2ToastComponent],
   providers: [Md2Toast, Md2ToastConfig],
 })
 export class Md2ToastModule { }

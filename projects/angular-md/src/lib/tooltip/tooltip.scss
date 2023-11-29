@@ -1,9 +1,10 @@
+@use 'sass:math';
 $md2-tooltip-target-height: 22px;
 $md2-tooltip-max-width: 250px;
 $md2-tooltip-font-size: 10px;
 $md2-tooltip-margin: 14px;
 $md2-tooltip-horizontal-padding: 8px;
-$md2-tooltip-vertical-padding: ($md2-tooltip-target-height - $md2-tooltip-font-size) / 2;
+$md2-tooltip-vertical-padding: math.div($md2-tooltip-target-height - $md2-tooltip-font-size, 2);
 
 md2-tooltip {
   pointer-events: none;

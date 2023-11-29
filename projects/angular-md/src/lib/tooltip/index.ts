@@ -7,7 +7,6 @@ import {Md2Tooltip, Md2TooltipComponent} from './tooltip';
   imports: [OverlayModule, MdCommonModule, PlatformModule],
   exports: [Md2Tooltip, Md2TooltipComponent, MdCommonModule],
   declarations: [Md2Tooltip, Md2TooltipComponent],
-  entryComponents: [Md2TooltipComponent],
 })
 export class Md2TooltipModule {}
 

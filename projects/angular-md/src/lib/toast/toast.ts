@@ -17,6 +17,7 @@ export class Toast {
   constructor(public message: string) { }
 }
 
+@Injectable()
 export class Md2ToastConfig {
   duration: number = 3000;
   viewContainerRef?: ViewContainerRef = null;

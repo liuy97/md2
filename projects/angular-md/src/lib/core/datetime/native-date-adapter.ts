@@ -1,4 +1,5 @@
 import {DateAdapter} from './date-adapter';
+import { Injectable } from "@angular/core";
 
 
 // TODO(mmalerba): Remove when we no longer support safari 9.
@@ -40,6 +41,7 @@ function range<T>(length: number, valueFunction: (index: number) => T): T[] {
 
 
 /** Adapts the native JS Date for use with cdk-based components that work with dates. */
+@Injectable()
 export class NativeDateAdapter extends DateAdapter<Date> {
   getYear(date: Date): number {
     return date.getFullYear();

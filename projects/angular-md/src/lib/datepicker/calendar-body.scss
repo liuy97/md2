@@ -1,15 +1,16 @@
+@use 'sass:math';
 $primary: #106cc8 !default;
 $md2-calendar-body-font-size: 13px !default;
 $md2-calendar-body-header-font-size: 14px !default;
 $md2-calendar-body-label-padding-start: 5% !default;
 $md2-calendar-body-label-translation: -6px !default;
 $md2-calendar-body-cell-min-size: 32px !default;
-$md2-calendar-body-cell-size: 100% / 7 !default;
+$md2-calendar-body-cell-size: math.div(100%, 7) !default;
 $md2-calendar-body-cell-content-margin: 5% !default;
 $md2-calendar-body-cell-content-border-width: 1px !default;
 
 $md2-calendar-body-min-size: 7 * $md2-calendar-body-cell-min-size !default;
-$md2-calendar-body-cell-padding: $md2-calendar-body-cell-size / 2 !default;
+$md2-calendar-body-cell-padding: math.div($md2-calendar-body-cell-size, 2) !default;
 $md2-calendar-body-cell-content-size: 100% - $md2-calendar-body-cell-content-margin * 2 !default;
 $md2-datepicker-selected-today-box-shadow-width: 1px;
 

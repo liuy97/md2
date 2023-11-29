@@ -1,5 +1,7 @@
 import { DateLocale } from './date-locale';
+import { Injectable } from "@angular/core";
 
+@Injectable()
 export class DateUtil {
 
   _locale: DateLocale = new DateLocale();

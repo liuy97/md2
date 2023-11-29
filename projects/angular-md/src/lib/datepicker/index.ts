@@ -51,8 +51,5 @@ export * from './date-util';
     Md2Clock,
   ],
   providers: [DateLocale, DateUtil],
-  entryComponents: [
-    Md2DatepickerContent
-  ]
 })
 export class Md2DatepickerModule { }

@@ -30,7 +30,7 @@ export class FullscreenOverlayContainer extends OverlayContainer {
   private _addFullscreenChangeListener(fn: () => void) {
     if (document.fullscreenEnabled) {
       document.addEventListener('fullscreenchange', fn);
-    } else if (document.webkitFullscreenEnabled) {
+    } else if ((document as any).webkitFullscreenEnabled) {
       document.addEventListener('webkitfullscreenchange', fn);
     } else if ((document as any).mozFullScreenEnabled) {
       document.addEventListener('mozfullscreenchange', fn);
@@ -44,8 +44,8 @@ export class FullscreenOverlayContainer extends OverlayContainer {
    * Only that element and its children are visible when in fullscreen mode.
   */
   getFullscreenElement(): Element {
-    return document.fullscreenElement ||
-        document.webkitFullscreenElement ||
+    return (document as any).fullscreenElement ||
+        (document as any).webkitFullscreenElement ||
         (document as any).mozFullScreenElement ||
         (document as any).msFullscreenElement ||
         null;

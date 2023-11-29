@@ -18,7 +18,7 @@ export class ViewportRuler {
   }
 
   /** Gets a ClientRect for the viewport's bounds. */
-  getViewportRect(documentRect = this._documentRect): ClientRect {
+  getViewportRect(documentRect = this._documentRect): DOMRect {
     // Cache the document bounding rect so that we don't recompute it for multiple calls.
     if (!documentRect) {
       this._cacheViewportGeometry();
@@ -45,7 +45,7 @@ export class ViewportRuler {
       right: scrollPosition.left + width,
       height,
       width,
-    };
+    } as DOMRect;
   }
 
 
